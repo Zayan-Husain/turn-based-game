@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zayan Megami Tensei</title>
+  <link rel="stylesheet" href="src/battle/game.css">
+</head>
+
+<body>
+  <div class="game">
+    <div class="battle">
+      <div class="playerWinScreen hide">
+        <h1>Victory</h1>
+        <button>Continue</button>
+      </div>
+      <div class="enemyWinScreen hide">
+        <h1>Defeat</h1>
+        <button>Continue</button>
+      </div>
+      <div class="attack_bar"></div>
+      <div class="enemy">
+        <div class="enemy_stand stand"></div>
+      </div>
+      <div class="enemy_stats">
+        <div class="statholder">
+          <span class="stat"> </span><br>
+          <span class="placeholder stat_hide"><code>insert placeholder text here</code></span><br>
+        </div>
+        <span class="ehealthspan">Health: </span> <br>
+        <span class="emagic_powerspan">Magic: </span>
+        <div class="healthbar">
+          <div class="ehealth"></div>
+        </div>
+      </div>
+      <div class="cursor">
+        <!-- <img class="cursor_custom" src="src/battle/images/pngkey.com-neon-arrow-png-1086471.png"> -->
+      </div>
+      <div class="player">
+        <div class="stand player_stand"></div>
+        <div class="moves">
+          <table class="attack_table hide">
+            <th>Attack</th>
+            <tr>
+              <td class="selected" id="heal|3">Bufudyne</td>
+            </tr>
+            <tr>
+              <td id="ice|4" class="shorter">Diamond Dust</td>
+            </tr>
+            <tr>
+              <td id="fire|3">Agidyne</td>
+            </tr>
+            <tr>
+              <td id="ice|3">Diarahan</td>
+            </tr>
+            <tr>
+              <td>move5</td>
+            </tr>
+            <tr>
+              <td>move6</td>
+            </tr>
+            <tr>
+              <td>move7</td>
+            </tr>
+            <tr>
+              <td>move8</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="player_stats">
+        <div class="statholder">
+          <span class="pstat"> </span><br>
+          <span class="placeholder stat_hide">....!</span><br>
+        </div>
+        <span class="phealthspan">Health: </span> <br>
+        <span class="pmagic_powerspan">Magic: </span>
+        <div class="healthbar">
+          <div class="phealth"></div>
+        </div>
+      </div>
+    </div>
+    <div class="gameplay">
+      <div class="game_player_parent"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+  <script src="src/keyEvents.js"></script>
+  <script src="src/battle/entity.js"></script>
+  <script src="src/battle/entities/player.js"></script>
+  <script src="src/battle/entities/enemy.js"></script>
+  <script src="src/battle/battle.js"></script>
+  <script src="src/game/entity.js"></script>
+  <script src="src/game/entities/player.js"></script>
+  <script src="src/game/entities/enemy.js"></script>
+  <script src="src/game/game.js"></script>
+</body>
+
+</html>

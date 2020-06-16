@@ -1,0 +1,269 @@
+@font-face {
+  src: url("../../fonts/GothamRoundedBold_21016.ttf");
+  font-family: Got;
+}
+@font-face {
+  src: url("../../fonts/FontsFree-Net-SkateBrand.ttf");
+  font-family: Skate;
+}
+body {
+  cursor: none;
+}
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+  overflow: hidden;
+}
+
+.game {
+  width: 100vw;
+  height: 100vh;
+}
+.healthbar {
+  width: 170px;
+  height: 30px;
+  background-color: #34363A;
+  margin-top: 15px;
+}
+.ehealth {
+  background-color: #00ff00;
+  height: inherit;
+  width: 0%;
+  transition: width 350ms;
+}
+.phealth {
+  background-color: #00ff00;
+  height: inherit;
+  width: 0%;
+  transition: width 350ms;
+}
+
+.enemy_stats {
+  margin: 140px 0 0 275px;
+  padding: 35px;
+  font-family: Got;
+  border-radius: 23px;
+  border: 1px solid black;
+  display: inline-block;
+  background: #fff;
+}
+.player_stats {
+  margin: 110px 0 0 875px;
+  padding: 35px;
+  font-family: Got;
+  border-radius: 23px;
+  border: 1px solid black;
+  display: inline-block;
+  position: absolute;
+  background: #fff;
+}
+table, th, td {
+  border: 1px solid black;
+  font-family: 'work sans', sans-serif;
+}
+table {
+  width: 480px !important;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+tr:nth-child(odd) {
+  background: black;
+  color: white;
+}
+td {
+  padding: 10px 0px;
+}
+tr:nth-child(even) {
+  background: rgb(128, 128, 128);
+  color: white;
+}
+.hide {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  display: none;
+}
+.show {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  display: block;
+}
+.selected {
+  border: 5px solid rgb(255, 102, 0);
+}
+.weak,
+.placeholder,
+.null,
+.drain,
+.resist {
+  font-size: 1.6rem;
+  position: absolute;
+  right: 846px;
+  top: 170px
+}
+.pstat {
+  display: inline-block;
+  font-size: 1.6rem;
+  position: absolute;
+  right: 0;
+}
+.stat_hide {
+  display: none;
+  position: absolute;
+}
+.null {
+  color: cornflowerblue;
+}
+.resist {
+  color: dodgerblue;
+}
+.drain {
+  color: deeppink;
+}
+.weak {
+  color: orangered;
+}
+.statholder {
+  text-align: center;
+}
+.attack_bar {
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  color: white;
+  background-color: #000;
+  display: block;
+  left: 0;
+  top: 50px;
+  right: 0;
+  text-align: center;
+  padding: 2px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  opacity: 0;
+}
+.stand {
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  transform: rotateX(55deg);
+}
+.player_stand.stand {
+  position: absolute;
+  left: 160px;
+  bottom: 15px;
+}
+.enemy_stand.stand {
+  position: absolute;
+  top: 60px;
+  right: 105px;
+}
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.cursor_custom {
+  width: 27px;
+  height: 35px;
+  position: absolute;
+}
+.cursor {
+  position: absolute;
+  z-index: 90;
+  pointer-events: none;
+}
+.playerWinScreen h1 {
+  font-family: Skate;
+  letter-spacing: 3px;
+  position: absolute;
+  color: #ECE236;
+  font-size: 5.5rem;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+.playerWinScreen {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(10, 10, 10, 0.9);
+  z-index: 998;
+}
+.playerWinScreen button{
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+  border: none;
+  border-radius:17px;
+  padding: 10px 20px;
+  box-shadow: 3px 4px 0px 0px #4cac58;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  transition: all 350ms;
+  cursor: pointer;
+  outline: none;
+}
+.playerWinScreen button:focus {
+  box-shadow: none;
+  top: 254px;
+  left: calc(50% + 3px);
+}
+.battle {
+  width: 100vw;
+  height: 100vh;
+}
+.enemyWinScreen h1 {
+  font-family: Skate;
+  letter-spacing: 3px;
+  position: absolute;
+  color: #c00600;
+  font-size: 5.5rem;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+.enemyWinScreen {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(10, 10, 10, 0.9);
+  z-index: 998;
+}
+.enemyWinScreen button{
+  background-image: linear-gradient(to right, #ff4719 0%, #ff4e50 100%);
+  border: none;
+  border-radius:17px;
+  padding: 10px 20px;
+  box-shadow: 3px 4px 0px 0px #b82b2b;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  transition: all 350ms;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.enemyWinScreen button:focus {
+  box-shadow: none;
+  top: 254px;
+  left: calc(50% + 3px);
+}
